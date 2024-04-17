@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Calculadora</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">customer</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <section class="datos">
+    <ion-list>
+      <ion-item>
+        <ion-label>Dato 1</ion-label>
+        <ion-input type="number" [(ngModel)]="dato1"></ion-input>
+        <ion-label>Dato 2</ion-label>
+        <ion-input type="number" [(ngModel)]="dato2"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-button (click)="sumar()">Sumar</ion-button>
+          <ion-button (click)="restar()">Restar</ion-button>
+          <ion-button (click)="multiplicar()">Multiplicar</ion-button>
+          <ion-button (click)="dividir()">Dividir</ion-button>
+          <ion-button (click)="modulo()">Modulo</ion-button>
+          <ion-button (click)="factorial()">Factorial</ion-button>
+          <ion-button (click)="llamarFibonacci()">Fibonacci</ion-button>
+          <ion-button>Resultado: {{resultado}}</ion-button>
+      </ion-item>
+
+      <div *ngIf="par">
+        <ion-button>El numero es par</ion-button>
+      </div>
+
+      <div *ngIf="!par">
+        <ion-button>El numero es inpar</ion-button>
+      </div>
+
+      <div *ngIf="resultado !== null">
+        <ion-button>El factorial del resultado es: {{facRes}}</ion-button>
+      </div>
+
+      <div *ngIf="fibonacciSeries.length > 0">
+        <ion-button>Serie Fibonacci:</ion-button>
+          <div *ngFor="let number of fibonacciSeries">
+            <ul>
+              <li>{{number}}</li>
+            </ul>
+          </div>
+      </div>
+    </ion-list>
+  </section>
+</ion-content>
