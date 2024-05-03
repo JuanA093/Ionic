@@ -1,0 +1,70 @@
+
+
+<ion-content [fullscreen]="true">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>
+        <h1>Venta de vehiculos</h1>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <app-crear-productos  (eventoCrearProducto) = "agregarProducto($event)"></app-crear-productos>
+
+
+  <div *ngFor="let producto of listaProductos">
+
+    <ion-card>
+      <ion-img [src]="producto.img"></ion-img>
+      <ion-card-header>
+        <ion-card-title>{{producto.marca}} | {{producto.modelo}}</ion-card-title>
+      </ion-card-header>
+
+      <br>
+
+      <ion-card-content>
+        <ion-item>
+          <ion-label>Precio:</ion-label>
+          <ion-text>$ {{producto.precio}}</ion-text>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Matricula:</ion-label>
+          <ion-text>{{producto.matricula}}</ion-text>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>No. Puertas</ion-label>
+          <ion-text>{{producto.puertas}}</ion-text>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Color:</ion-label>
+          <ion-text>{{producto.color}}</ion-text>
+        </ion-item>
+
+
+        <ion-item>
+          <ion-label>Categoria:</ion-label>
+          <ion-text>{{producto.categoria}}</ion-text>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Vendedor:</ion-label>
+          <ion-text>{{producto.vendedor}}</ion-text>
+        </ion-item>
+
+      </ion-card-content>
+
+    </ion-card>
+
+    
+
+  </div>
+
+
+  
+  
+  
+
+</ion-content>
